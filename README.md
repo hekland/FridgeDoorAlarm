@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-**Low-power circuit-break detector using the ATtiny85, to ensure the fridge and freezer doors are closed**
+**Low-power circuit-break detector using the ATtiny85, to ensure that the fridge and freezer doors are closed**
 
 * Version 1.0 (2017-07-30): Initial release
 
