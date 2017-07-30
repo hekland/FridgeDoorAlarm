@@ -1,12 +1,11 @@
-/* Low-power Two-circuit break detector using the ATtiny85
+/* Low-power dual circuit-break detector using the ATtiny85
 * 
-* This program will every eight seconds check the two circuits 
+* This program will, every eight seconds, check the two circuits 
 * to see whether they're open or closed. This is typically the fridge
-* and the freezer door. If the door is open for more than three minutes
-* the piezo-buzzer will beep three times followed by four seconds pause if the
-* fridge door is open, and continue until it's closed. For the freezer door, 
-* nine beeps will be produced.
-* In addition, a LED will blink briefly every 60 seconds to show it's alive.
+* and the freezer door. If the fridge door is open for more than three minutes
+* the piezo-buzzer will beep three times followed by four seconds pause and continue 
+* until it's closed. For the freezer door, nine beeps will be produced.
+* In addition, an LED will blink briefly every 60 seconds to show it's alive.
 * The ATtiny85 is using a 1MHz internal clock.
 * 
 * The program uses approximately 4.5uA without the LED, and 6.5uA with the
