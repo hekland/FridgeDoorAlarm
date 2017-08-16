@@ -8,10 +8,11 @@
 * In addition, an LED will blink briefly every 60 seconds to show it's alive.
 * The ATtiny85 is using a 1MHz internal clock.
 * 
-* The program uses approximately 4.5uA without the LED, and 6.5uA with the
-* current configuration (red LED, 330ohm resistor, 15ms blink and 60s interval)
-* With 6.5uA average current consumption, a CR2032 coin cell battery with 220mAh
-* will give 3.8 years life. Without the LED, 5.5 years.
+* The program uses approximately 5.8uA without the LED, and 7.8uA with the
+* current configuration (red LED, 330ohm resistor, 15ms blink and 60s interval),
+* and door circuit checking every 8 sec, running 350uA for 15ms for each circuit.
+* With 7.8uA average current consumption, a CR2032 coin cell battery with 220mAh
+* will give 3.2 years life. Without the LED, 4.3 years.
 * 
 * Low-power modes are attained using the LowPower library:
 * https://github.com/sej7278/LowPower which is based on the 
@@ -19,6 +20,7 @@
 * 
 * Written by: Fredrik Hekland
 * Date: 2017-07-26
+* Last update: 2017-08-16
 * 
 * This code is licensed under Creative Commons Attribution-ShareAlike 3.0
 * Unported License.
@@ -118,6 +120,7 @@ void togglePinHigh(period_t period, uint8_t pinNr)
 uint8_t checkIsDoorOpen(uint8_t pin)
 {
   digitalWrite(PIN_SWITCH_VCC, LOW); // run current through door circuit
+  LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER1_OFF, TIMER0_OFF); // give time to stabilize
   uint8_t val = digitalRead(pin); // high if open door, low if closed
   digitalWrite(PIN_SWITCH_VCC, HIGH); // shutoff current to save energy
   return val;
