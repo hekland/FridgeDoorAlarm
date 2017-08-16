@@ -14,8 +14,8 @@ the piezo-buzzer will beep three times followed by four seconds pause, and conti
 For the freezer door, nine beeps will be produced.
 In addition, an LED will blink briefly every 60 seconds to show it's alive.
 
-The ATtiny85 is using a 1MHz internal clock, and will run for 3.8 years on 
-a 220mAh CR2032 coin cell battery. If the LED is omitted, over 5 years runtime
+The ATtiny85 is using a 1MHz internal clock, and will run for 3 years on 
+a 220mAh CR2032 coin cell battery. If the LED is omitted, over 4 years runtime
 is expected.
 
 ### How do I get set up? ###
