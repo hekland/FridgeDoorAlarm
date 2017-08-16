@@ -5,6 +5,7 @@
 **Low-power circuit-break detector using the ATtiny85, to ensure that the fridge and freezer doors are closed**
 
 * Version 1.0 (2017-07-30): Initial release
+* Version 1.1 (2017-08-16): Tweaked door circuit sensing method to provide more stable readings
 
 This program will, every eight seconds, check the two circuits 
 to see whether they're open or closed. This is typically the fridge
